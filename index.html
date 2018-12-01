@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystals Collector Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- Score/Number/Etc.  -->
+    <div class="container">
+        <div id="randomNumber">RN</div>
+        <div id="score">Current Score</div>
+    </div> 
+
+    <!-- Instructions! -->
+    <p> Below you will find 4 images of crystals. Click on an image to reveal its hidden value and stack the values to try to match the number above. If you can match it, you win! 
+        If your number exceeds the one above, you lose!
+    </p>
+
+    <!-- Crystal Images -->
+    <div class="container">
+        <div class="crystals">
+            <img id="blue" src="assets/images/bluecrystal.jpg" alt="Blue Crystal">
+            <img id="red" src="assets/images/redcrystal.png" alt="Red Crystal">
+            <img id="purple" src="assets/images/purplecrystal.jpeg" alt="Purple Crystal">
+            <img id="green" src="assets/images/greencrystal.png" alt="Green Crystal">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src= "assets/javascript/game.js"></script>
+
+</body>
+
+</html>
