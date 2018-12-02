@@ -1,46 +1,70 @@
-// * There will be four crystals displayed as buttons on the page.
-
-// variables
-var randomNumber
-var userScore
+$(document).ready(function () {
 
 
-// * The player will be shown a random number at the start of the game.
-function startGame () {
-    randomNumber = Math.floor(Math.random()*101) + 19;
-    $("#randomNumber").html("Number to reach!:" + randomNumber);
-    
+// variables!
+    var totalScore = 0;
+    $(".score").html(totalScore);
+    var wins = 0;
+    $(".wins").html("Wins: " + wins);
+    var losses = 0;
+    $(".losses").html("Losses: " + losses);
 
-// * When the player clicks on a crystal, it will add a specific amount of points to the player's total score. 
-$("#blue").on("click", start);
-$("#red").on("click", start);
-$("#purple").on("click", start);
-$("#green").on("click", start);
-
-
-//   * Your game will hide this amount until the player clicks a crystal.
-//   * When they do click one, update the player's score counter.
+    function gameStart() {
+//le randomNumber generator!
+        randomNumber = Math.floor(Math.random() * 102) + 19;
+        $("#randomNumber").html(randomNumber);
 
 
-
-// * The player wins if their total score matches the random number from the beginning of the game.
-
-
-
-// * The player loses if their score goes above the random number.
+//users score from clicking
+        totalScore = 0;
+        $(".score").html(totalScore);
 
 
+//assigning each crystal a value, variables for crystals.        
+        crystalBlue = Math.floor(Math.random() * 12) + 1;
+        $("#blue").attr("crystalValue", crystalBlue);
+        crystalRed = Math.floor(Math.random() * 12) + 1;
+        $("#red").attr("crystalValue", crystalRed);
+        crystalPurple = Math.floor(Math.random() * 12) + 1;
+        $("#purple").attr("crystalValue", crystalPurple);
+        crystalGreen = Math.floor(Math.random() * 12) + 1;
+        $("#green").attr("crystalValue", crystalGreen);
+            console.log(crystalBlue)
+            console.log(crystalRed)
+            console.log(crystalPurple)
+            console.log(crystalGreen)    
+    }    
 
-// * The game restarts whenever the player wins or loses.
+
+// .crystals onclick function
+        $(".crystals").on("click", function crystalClick () {
 
 
+// applying the clicked value to the users score, turn string to number
+        var crystalValue = ($(this).attr("crystalValue"));
+        crystalValue = parseInt(crystalValue);
+        totalScore += crystalValue;
+        console.log(crystalValue)
+        $("#score").html(totalScore);
+        console.log(totalScore)
 
-//   * When the game begins again, the player should see a new random number. Also, all the crystals will have four new hidden values. Of course, the user's score (and score counter) will reset to zero.
+
+ // conditional for wins and loses, call to restart le game   
+ //wins     
+        if (totalScore === randomNumber) {
+            wins++;
+            $("#wins").html("wins: " + wins);
+            gameStart();
+        }
 
 
+//losses
+        else if (totalScore > randomNumber) {
+            losses++;
+            $("#losses").html("losses: " + losses);
+            gameStart();
+        }
 
-// * The app should show the number of games the player wins and loses. To that end, do not refresh the page as a means to restart the game.
-
-}
-
-startGame ()
+    });
+    gameStart()
+});
