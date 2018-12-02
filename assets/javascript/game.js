@@ -17,7 +17,7 @@ $(document).ready(function () {
 
 //users score from clicking
         totalScore = 0;
-        $(".score").html(totalScore);
+        $("#score").html(totalScore);
 
 
 //assigning each crystal a value, variables for crystals.        
