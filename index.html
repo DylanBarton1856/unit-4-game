@@ -5,22 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crystals Collector Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
     <!-- Score/Number/Etc.  -->
-    <div class="container">
-        <div id="wins">wins</div>
-        <div id="losses">loss</div>
-        <div id="randomNumber">RN</div>
-        <div id="score">Current Score</div>
-    </div> 
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h3>
+            <div id="wins">wins</div>
+            <div id="losses">losses</div>
+            <div id="randomNumber">RN</div>
+            <div id="score">Current Score</div>
+            </h3>
+        </div> 
+    </div>
 
     <!-- Instructions! -->
-    <p> Below you will find 4 images of crystals. Click on an image to reveal its hidden value and stack the values to try to match the number above. If you can match it, you win! 
+    <h1> Below you will find 4 images of crystals. Click on an image to reveal its hidden value and stack the values to try to match the number above. If you can match it, you win! 
         If your number exceeds the one above, you lose!
-    </p>
+</h1>
 
     <!-- Crystal Images -->
     <div class="container">
@@ -31,7 +37,7 @@
             <img class="crystals" id="green" src="assets/images/greencrystal.png" alt="Green Crystal">
         <!-- </div> -->
     </div>
-
+</div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src= "assets/javascript/game.js"></script>
 

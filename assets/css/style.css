@@ -1,9 +1,18 @@
 .crystals {
-    /* position: relative;
+    position: relative;
     float: left;
     width:  100px;
     height: 100px;
     background-position: 50% 50%;
     background-repeat:   no-repeat;
-    background-size:     cover; */
+    background-size:     cover;
+}
+
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-image: url("../images/background.jpg");
+    background-repeat: repeat;
+    color: #777777;
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
 }
